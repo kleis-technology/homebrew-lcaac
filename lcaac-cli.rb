@@ -5,7 +5,7 @@ class LcaacCli < Formula
   sha256 "8c273153ef26b339650ef7c042158cb8f7cdf430768d288cd6a306b2f8b4bb3a"
   version "1.7.10" # Replace with the appropriate version
 
-  depends_on "temurin@17" # Use the Java version that your application requires
+  depends_on "openjdk@17" # Use the Java version that your application requires
 
   def install
     # Install all files into the libexec directory
