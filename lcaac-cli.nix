@@ -1,9 +1,10 @@
 { 
-    pkgs ? import <nixpkgs> { system = builtins.currentSystem; }
-    , lib ? pkgs.lib
-    , stdenv ? pkgs.stdenv
-    , fetchurl ? pkgs.fetchurl
-    , jdk ? pkgs.jdk }:
+    lib
+    , stdenv
+    , fetchurl
+    , jdk17
+    , makeBinaryWrapper
+}:
 
 stdenv.mkDerivation rec {
   pname = "lcaac";
@@ -14,7 +15,8 @@ stdenv.mkDerivation rec {
     hash = "sha256-jCcxU+8mszllDvfAQhWMuPfN9DB2jSiM1qMGsvi0uzo=";
   };
 
-  nativeBuildInputs = [ jdk ];
+  nativeBuildInputs = [ makeBinaryWrapper ];
+  buildInputs = [ jdk17 ];
 
   buildPhase = ''
     # No build is needed since we are using a pre-packaged distribution
@@ -23,12 +25,10 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     # Install all files under $out
-    mkdir -p $out/libexec
-    cp -r * $out/libexec
-
-    # Create a wrapper script for the executable
-    mkdir -p $out/bin
-    ln -s $out/libexec/bin/lcaac $out/bin/lcaac
+    mkdir -p $out
+    cp -r * $out
+    wrapProgram $out/bin/lcaac \
+        --prefix PATH : ${lib.makeBinPath [ jdk17 ]}
   '';
 
   # Test the package by verifying that the command runs successfully
