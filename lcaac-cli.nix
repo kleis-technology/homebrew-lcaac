@@ -1,13 +1,17 @@
-{ stdenv, fetchurl, jdk }:
+{ 
+    pkgs ? import <nixpkgs> { system = builtins.currentSystem; }
+    , lib ? pkgs.lib
+    , stdenv ? pkgs.stdenv
+    , fetchurl ? pkgs.fetchurl
+    , jdk ? pkgs.jdk }:
 
 stdenv.mkDerivation rec {
   pname = "lcaac";
   version = "1.7.10";
 
-  # Replace with the actual URL to the tarball of your bundled distribution
   src = fetchurl {
     url = "https://github.com/kleis-technology/lcaac/releases/download/v1.7.10/lcaac-cli-v1.7.10.tar.gz";
-    sha256 = "8c273153ef26b339650ef7c042158cb8f7cdf430768d288cd6a306b2f8b4bb3a"
+    hash = "sha256-jCcxU+8mszllDvfAQhWMuPfN9DB2jSiM1qMGsvi0uzo=";
   };
 
   nativeBuildInputs = [ jdk ];
@@ -32,9 +36,9 @@ stdenv.mkDerivation rec {
     $out/bin/lcaac version
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Command-line interface tool for LCAAC";
-    homepage = "https://github.com/kleis-technology/lcaac"
+    homepage = "https://github.com/kleis-technology/lcaac";
     license = licenses.mit; # Replace with the actual license if different
     maintainers = [ "kleis-technology" ]; # Replace with the actual maintainer
     platforms = platforms.linux ++ platforms.darwin;
