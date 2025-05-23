@@ -8,11 +8,12 @@
 
 stdenv.mkDerivation rec {
   pname = "lcaac";
-  version = "1.7.11";
+  version = "1.7.12";
 
   src = fetchurl {
-    url = "https://github.com/kleis-technology/lcaac/releases/download/v1.7.11/lcaac-cli-v1.7.11.tar.gz";
-    hash = "sha256-4t/WgnlRN8J/NJ6NBXYECRjJ6nYC3F5X9guHmfdGYeI=";
+    url = "https://github.com/kleis-technology/lcaac/releases/download/v1.7.12/lcaac-cli-v1.7.12.tar.gz";
+#    sha256 = lib.fakeSha256;
+    sha256 = "sha256-2gAOYSD34z+jC6nhFfAd2Lx7pw5vicSgLwrezN4bPgw=";
   };
 
   nativeBuildInputs = [ makeBinaryWrapper ];
@@ -39,7 +40,7 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     description = "Command-line interface tool for LCAAC";
     homepage = "https://github.com/kleis-technology/lcaac";
-    license = licenses.mit; # Replace with the actual license if different
+    # license = licenses.mit; # Replace with the actual license if different
     maintainers = [ "kleis-technology" ]; # Replace with the actual maintainer
     platforms = platforms.linux ++ platforms.darwin;
   };
