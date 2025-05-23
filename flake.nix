@@ -1,8 +1,6 @@
 {
   description = "Flake for lcaac-cli, multi-system";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-
   outputs = { self, nixpkgs }:
     let
       supportedSystems = [ "x86_64-linux" "aarch64-darwin" ];
