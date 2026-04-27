@@ -1,9 +1,9 @@
 class LcaacCli < Formula
   desc "Command-line interface tool for LCAAC"
   homepage "https://github.com/kleis-technology/lcaac"
-  url "https://github.com/kleis-technology/lcaac/releases/download/v2.3.0/lcaac-cli-v2.3.0.tar.gz"
-  sha256 "" # use `sha256sum <file.tar.gz>
-  version "2.3.0" # Replace with the appropriate version
+  url "https://github.com/kleis-technology/lcaac/releases/download/v2.4.0/lcaac-cli-v2.4.0.tar.gz"
+  sha256 "5f5b40164d5e5ac10cc6fe5d9461656433bc5c2617257625bd3a1efc064d0dfd" # use `sha256sum <file.tar.gz>
+  version "2.4.0" # Replace with the appropriate version
 
   depends_on "openjdk@17" # Use the Java version that your application requires
 
