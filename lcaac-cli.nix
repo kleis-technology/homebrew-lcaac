@@ -8,12 +8,12 @@
 
 stdenv.mkDerivation rec {
   pname = "lcaac";
-  version = "2.3.0";
+  version = "2.4.0";
 
   src = fetchurl {
-    url = "https://github.com/kleis-technology/lcaac/releases/download/v2.3.0/lcaac-cli-v2.3.0.tar.gz";
+    url = "https://github.com/kleis-technology/lcaac/releases/download/v2.4.0/lcaac-cli-v2.4.0.tar.gz";
 #   sha256 = lib.fakeSha256;
-    sha256 = "sha256:bf241a46d640ceacb84ce64dfe42324b671c4a3746837f1931fbee4bdf492af7";
+    sha256 = "sha256-X1tAFk1eWsEMxv5dlGFlZDO8XCYXJXYlvToe/AZNDf0=";
   };
 
   nativeBuildInputs = [ makeBinaryWrapper ];
