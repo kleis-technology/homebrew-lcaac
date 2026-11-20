@@ -1,9 +1,9 @@
 {
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Command-line interface tool for LCAAC",
   "homepage": "https://github.com/kleis-technology/lcaac",
-  "url": "https://github.com/kleis-technology/lcaac/releases/download/v3.2.0/lcaac-cli-v3.2.0.tar.gz",
-  "hash": "sha256:9d8e44ecde60c0192c96da613feda2709bee3af9b26730ebbcec00d8d3471081",
+  "url": "https://github.com/kleis-technology/lcaac/releases/download/v3.3.0/lcaac-cli-v3.3.0.tar.gz",
+  "hash": "sha256:1fd6480a80ffb933817987d23f36835031fc1e1d8b6946e1cfb486b62e3ea49b",
   "bin": "bin\\lcaac.bat",
   "depends": "extras/temurin17-jdk",
   "checkver": {
